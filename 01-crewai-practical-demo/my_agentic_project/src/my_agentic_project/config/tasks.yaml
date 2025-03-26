@@ -1,0 +1,51 @@
+research_task:
+  description: >
+    Conduct market research on the '{product_name}' within the {industry} industry. 
+    Analyze online reviews, market reports, and competitor products. 
+    Identify key trends and assess the product's market potential.
+    Generate a market research report.
+  expected_output: >
+    A comprehensive market research report that includes:
+    an executive summary, market analysis, competitor analysis,
+    trend identification, and market potential assessment.
+    Formatted as markdown without '```'.
+  output_file: multi-agent-report.md
+  agent: market_researcher
+
+content_strategy_task:
+  description: >
+    Develop a detailed content strategy for '{product_name}' based on the provided market research report. 
+    Identify key target audience segments, define core messaging pillars, and outline specific content formats and platforms. 
+    Ensure the strategy aligns with the market analysis and addresses identified trends.
+  expected_output: >
+    A comprehensive content strategy document that includes:
+    target audience profiles, key messaging guidelines, content format recommendations (blog posts, videos, social media),
+    and a content calendar outlining key milestones.
+    Formatted as markdown without '```'.
+  output_file: content_stratregy.md
+  agent: content_strategist
+
+technical_documentation_task:
+  description: >
+    Create a comprehensive technical documentation package for '{product_name}'. 
+    Include detailed usage guidelines, troubleshooting procedures, and key features. 
+    Ensure clarity and accuracy for all users.
+  expected_output: >
+    A technical documentation package that includes:
+    usage guidelines, troubleshooting flowcharts, and a feature summary.
+    Formatted as markdown without '```'.
+  output_file: technical_documentation.md
+  agent: technical_writer
+
+creative_content_task:
+  description: >
+    Produce engaging marketing copy, blog posts, and social media content for '{product_name}' across X, LinkedIn, and Instagram. 
+    Develop compelling narratives, visual content concepts, and interactive posts that resonate with the target audience. 
+    Ensure consistent branding and messaging across all platforms.
+  expected_output: >
+    A collection of creative content that includes:
+    1 blog post drafts, 2 X (Twitter) thread ideas, 1 LinkedIn article outlines, and 2 Instagram post concepts.
+    Formatted as markdown without '```'.
+  output_file: creative_content.md
+  context: [content_strategy_task, technical_documentation_task]
+  agent: creative_writer
